@@ -1,0 +1,22 @@
+{% include 'nav.html' %}
+<div class="charminar">
+{% block content %}
+    <center>
+	<div class="">
+		<div style="width: 650px;">
+			
+		
+			<div class="panel panel-primary" style="margin:45px;">
+				<div class="panel-heading" style="font-size:25px;color:darkgreen;background-color:lightcyan">Add LAPTOP Name:</div>
+				<div class="panel-body" style="background-color:cornsilk">
+					<form class="form-inline" action="{{ url_for('addLaptop')}}" method="POST">
+						  <label for="email" class="mr-sm-2" style="font-size:20px">Enter laptop Brand Name:</label>
+						  <input type="text" class="form-control mb-2 mr-sm-2" name="name" placeholder="Enter laptop  Name" required><br><br>
+						  <input type="submit" class="btn btn-primary mb-2" style="color:purple;font-size:30px;background-color:antiquewhite"value="Add Brand">
+					</form>
+				</div>
+			</div>	
+		</div>	
+	</div>
+	</center>
+{% endblock content %}

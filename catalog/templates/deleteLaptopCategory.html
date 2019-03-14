@@ -1,0 +1,24 @@
+{% include 'nav.html' %}
+<div class="charminar">
+{% block content %}
+    <center>
+	<div class="">
+		<div class="d-flex justify-content-center">
+			<div class="card" style="width:38rem;">
+		<form action="{{url_for('deleteLaptopCategory',hiphopid=hiphop.id)}}" method="POST">
+		<div class="card-body bg-info">
+		<h2 class="card-text" style="color:navy">Are you sure you want to delete {{hiphop.name}}</h2>
+			</div>
+			<div class="card-footer d-flex justify-content-center">
+			<input type="submit" class="btn btn-danger" value="Delete" style="margin-right: 10px;color:white;background-color:black;font-size:28px;font-weight:bold;border-radius:50px;border:5px solid greenyellow">
+
+				<button type="button" class="button warning"style="background-color:black;border-radius:50px;border:5px solid greenyellow"><a href="{{url_for('LapStore',hiphopid=hiphop.id)}}" method="POST" style="color:white;font-size:30px;font-weight:bold;">Cancel</a></button>
+			</div>
+			
+		</form>
+	</div>
+		</div>
+		
+	</div>
+	</center>
+	{% endblock content %}

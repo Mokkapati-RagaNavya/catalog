@@ -1,0 +1,53 @@
+{% include 'nav.html' %}
+<div class="charminar">
+{% block content %}
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<center>
+	        <div class="alert alert-success alert-dismissable animated fadeIn" style="background-color:antiquewhite;color:black;">
+	            {% for message in messages %}
+	            <a href="#" class="closinghiphen" data-dismiss="alert" aria-label="closinghiphen" style="color:black;">CLOSE</a>
+	            <p class="height4"><strong>{{ message }}</strong></p>
+	            {% endfor %}
+	        </div>
+	</center>
+	{% endif %}	    
+{% endwith %}
+{% if 'username' in session %}
+<center>
+<button type="button" class="warningforthebutton" style="margin: 10px 0px 5px 10px;color:saddlebrown;background-color:palegreen;font-size:27px;border-radius:70px;border:2px solid olivedrab;border-weight:thick;">
+<a href="{{url_for('addLapDetails',hiphopname= b612.name)}}" style="text-decoration: none;"><strong>Add New Laptop</strong></a></button>
+
+{% endif %}
+<div class="row-spanfortherows" style="margin:100px;">
+{% for camel in youcam %}
+
+	<div class="col-sm-4 text-center" >
+		<div class="panel panel-primary" style="border:1px solid olive;border-style:dashed;border-width:thick;">
+			<div class="panel-heading" style="background-color:darksalmon;color:indigo;">
+				<h3>{{ camel.lapyname }}</h2>
+			</div>
+			<div class="panel-body text-center" style="background-color:bisque">
+				<table>
+					<tr><th>LAPYNAME</th><td>:</td><td><h4>{{ camel.lapyname }}</h4></td></tr>
+					<tr><th>SPECIALITY</th><td>:</td><td><h4>{{ camel.speciality }}</h4></td></tr>
+					<tr><th>RAM</th><td>:</td><td><h4>{{ camel.ram }}</h4></td></tr>
+					<tr><th>STORAGE</th><td>:</td><td><h4>{{ camel.storage }}</h4></td></tr>
+					<tr><th>PRICE</th><td>:</td><td><h4>{{ camel.price }}</h4></td></tr>
+					<tr><th>WARRENTY</th><td>:</td><td><h4>{{ camel.warrenty }}</h4></td></tr>
+					<tr><th>RATING</th><td>:</td><td><h4>{{ camel.rating }}</h4></td></tr>
+					</table>
+			</div>
+			{% if 'username' in session %}
+			<div class="panel-footer" style="background-color:tan;">
+					<button type="button" class="btn btn-info" style="background-color:brown;border-radius:50px;border:2px solid darkcyan;"><a href="{{ url_for('editLaptop',hiphopid= b612.id,camelname=camel.lapyname) }}"style="text-decoration: none;color:white;font-size:20px">EDIT</a></button>
+					<button type="button" class="btn btn-danger" style="background-color:brown;border-radius:50px;border:2px solid darkcyan"><a href="{{ url_for('deleteLaptop',hiphopid= b612.id,camelname=camel.lapyname)}}"style="text-decoration: none;color:white;font-size:20px;">DELETE</a></button>
+			</div>
+			{% endif %}	
+			
+		</div>
+	</div>
+{% endfor %}
+</div>
+{% endblock content %}
+</div>

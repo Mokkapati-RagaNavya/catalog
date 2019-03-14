@@ -1,0 +1,45 @@
+
+{% include 'nav.html' %}
+<div class="charminar">
+{% block content %}
+<div class="">
+		<div class="mr-sm-2 mb-2 col-sm-8" style="margin-left:125px;">
+			<form action="{{ url_for('editLaptop',hiphopid=hiphopid,camelname=lapdetails.lapyname)}}" method="POST">
+				<div class="panel panel-info">
+				  <div class="panel-heading" style="background-color:lightsalmon;color:indigo">Edit Laptop Details..</div>
+				  <div class="panel-body" style="background-color:peachpuff">
+				  	
+					  <div class="form-group">
+					  	<label class="text-primary" for="lapyname">Enter Laptop Name:</label>
+					    <input type="name" class="form-control" name="lapyname" value="{{lapdetails.lapyname}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="year">Enter Year:</label>
+					    <input type="text" class="form-control" name="speciality" value="{{lapdetails.speciality}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="color">Enter ram:</label>
+					    <input type="text" class="form-control" name="ram" value="{{lapdetails.ram}}">
+					  </div>
+					  <div class="text-primary" class="form-group">
+					  	<label for="storage">Enter storage:</label>
+					    <input type="text" class="form-control" name="storage" value="{{lapdetails.storage}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="price">Enter Price:</label>
+					    <input type="text" class="form-control" name="price" value="{{lapdetails.price}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="warrenty">Enter warrenty details:</label>
+					    <input type="text" class="form-control" name="warrenty" value="{{lapdetails.warrenty}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="rating">Enter rating:</label>
+					    <input type="text" class="form-control" name="rating" value="{{lapdetails.rating}}">
+				      </div> 
+				  <div class="panel-footer text-center" style="background-color:lightcoral"><input type="submit" class="btn btn-primary" value="Edit" style="color:red;background-color:black;font-size:22px;border-radius:40px;border:3px solid lightseagreen;"></div>
+				</div>
+				</form>
+			</div>
+</div>
+{% endblock content %}

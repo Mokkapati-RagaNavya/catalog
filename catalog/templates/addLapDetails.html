@@ -1,0 +1,51 @@
+
+{% include 'nav.html' %}
+<div class="charminar">
+{% block content %}
+<div class="">
+		<div class="mr-sm-2 mb-2 col-sm-8" style="margin-left:145px;margin-top:0px">
+			<form action="{{ url_for('addLapDetails',hiphopname=hiphopname)}}" method="POST">
+				<div class="panel panel-primary">
+				  <div class="panel-heading bg-success" style="color:teal;background-color:skyblue;font-size:25px">Add Laptop Details below......</div>
+				  <div class="panel-body" style="background-color:azure">
+				  	
+					  <div class="form-group">
+					  	<label class="text-primary" for="name" style="color:indigo">Enter Laptop Name:</label>
+					    <input type="name" class="form-control" name="lapyname" placeholder="Enter Laptop Name:" pattern="[A-Za-z ]{1,}" title="Allow Characters Only" required>
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="year" style="color:indigo" >Enter Speciality:</label>
+					    <input type="text" class="form-control" name="speciality" placeholder="Enter speciality:" pattern="[A-Za-z0-9 ]{1,}" title="Allow Characters Only" required>
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="color" style="color:indigo" >Enter Laptop ram:</label>
+					    <input type="text" class="form-control" name="ram" placeholder="Enter ram:" pattern="[A-Za-z0-9 ]{1,}" title="Allow both characters and numbers only " required>
+					  </div>
+					  <div class="text-primary" class="form-group">
+					  	<label for="storage" style="color:indigo" >Enter storage:</label>
+					    <input type="text" class="form-control" name="storage" placeholder="Enter storage:" pattern="[A-Za-z0-9 ]{1,}" title="Allow Characters Only" required>
+					  </div>
+					  <div class="form-group" >
+					  	<label class="text-primary" for="price" style="color:indigo" >Enter Price:</label>
+					    <input type="text" class="form-control" name="price" placeholder="Enter Price:" pattern="[0-9]{2,}" title="Allow numbers Only" required>
+					  </div>
+					  <div class="form-group"  >
+					  	<label class="text-primary" for="gearboxes" style="color:indigo" >Enter warrenty details:</label>
+					    <input type="text" class="form-control" name="warrenty" placeholder="Enter warrenty:" pattern="[A-Za-z0-9 ]{1,}" title="Allow Characters and numbers Only" required>
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="rating" style="color:indigo">Enter rating:</label>
+					    <input type="text" class="form-control" name="rating" placeholder="Enter rating:" pattern="[A-Za-z0-9 ]{1,}" title="Allow Characters and numbers Only" required>
+					  </div>
+					 <!--<div class="form-group" >
+					    <input type="text" class="form-control " name="laptopid" value="{{ hiphopname }}" readonly>
+					  </div>__-->
+				  </div>
+					<center>				  
+				  <div class="panel-footer text-center" style="background-color:mediumaquamarine"><input type="submit" class="btn btn-primary" value="Submit" style="color:white;background-color:black;border-radius:50px;border:2px solid red;font-weight:bold"></center></div>
+				</div>
+				</form>
+			</div>
+
+</div>
+{% endblock content %}

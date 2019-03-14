@@ -1,0 +1,28 @@
+{% include 'nav.html' %}
+<div class="charminar">
+{% block content %}
+  <!-- {% for hiphop in camera %}
+    <a href="{{ url_for('showLaptop',hiphopid=hiphop.id)}}">{{hiphop.name}}</a><br>
+    {% endfor %} -->
+    {% with messages = get_flashed_messages() %}
+	    {% if messages %}
+		<center>
+	        <div class="alert alert-success alert-dismissable animated fadeIn" style="background-color:lightskyblue;color:black;font-size:15px">
+	            {% for message in messages %}
+	            <a href="#" class="closinghiphen" data-dismiss="alert" aria-label="closinghiphen" style="color:black">CLOSE</a>
+	            <p class="efilaegnahcnacaedina"><strong>{{ message }}</strong></p>
+	            {% endfor %}
+	        </div>
+		</center>
+	    {% endif %}
+	{% endwith %}
+
+	<div class="text-center">
+		<!-- <h1>Welcome to Bookstore</h1> -->
+		<img style="width: 100%; height:702px; margin: 0; padding: 0"
+		src="https://cdn1-www.mandatory.com/assets/uploads/2018/09/Top_10_Best_Laptops.jpg">
+	</div>
+
+    
+{% endblock content %}
+</div>
